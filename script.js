@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', function() {
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !isExpanded);
-    menu.setAttribute('aria-expanded', !isExpanded);
+    menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.setAttribute('aria-expanded', !isExpanded);
 
-    // Toggle la classe pour l'animation
-    menu.classList.toggle('active');
-    });
+        // Toggle la classe pour l'animation
+        menu.classList.toggle('active');
+        });
 });
 
 document.addEventListener('click', function(e) {

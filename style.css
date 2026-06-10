@@ -32,17 +32,21 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    position: sticky;
+    position: fixed;
     top: 0;
     background: rgba(17, 24, 39, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
+    width: 100%;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #22c55e;
+    align-items: center;
+    display: flex;
+    gap: 10px;
 }
 
 .nav-links {
@@ -81,6 +85,11 @@ body {
         url('img/lat.jpg') center/cover;
 }
 
+.hero-logo {
+    width: 150px;
+    height: auto;
+}
+
 .hero-content {
     flex: 1;
     display: flex;
@@ -105,6 +114,8 @@ body {
     display: flex;
     gap: 20px;
 }
+
+
 
 /* BUTTONS */
 

@@ -189,9 +189,11 @@ body {
 
 .card:hover,
 .contact-card:hover,
-.value-item:hover {
-    transform: translateY(-5px);
+.value-item:hover,
+.join-box:hover {
+    transform: translateY(-10px);
     border-color: #22c55e;
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2);
 }
 
 .card h3,

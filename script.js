@@ -28,11 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterGlossary() {
         const searchTerm = document.getElementById('glossary-search').value.trim().toLowerCase();
         const listItems = document.querySelectorAll('.content-grid-large li');
+        const cards = document.querySelectorAll('.content-grid-large .card');
 
         // Si le champ est vide, réafficher tous les éléments
         if (searchTerm === '') {
             listItems.forEach(item => {
                 item.style.display = '';
+            });
+            cards.forEach(card => {
+                card.style.display = '';
             });
             return;
         }
@@ -50,6 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 item.style.display = 'none'; // Cacher si pas de <strong>
             }
+        });
+
+        cards.forEach(card => {
+            const listItems = card.getElementsByTagName('li');
+            let hasVisibleItem = false;
+
+            for (let i = 0; i < listItems.length; i++) {
+                if (listItems[i].style.display !== 'none') {
+                    hasVisibleItem = true;
+                    break;
+                }
+            }
+
+            card.style.display = hasVisibleItem ? '' : 'none';
         });
     }
 

@@ -17,6 +17,13 @@ body {
     color: #f3f4f6;
 }
 
+a {
+    color: #22c55e; 
+}
+a:hover {
+    color: #16a34a;
+}
+
 /* CONTAINER */
 
 .container {
@@ -173,6 +180,14 @@ body {
     gap: 25px;
 }
 
+.content-grid-large,
+.contact-grid-large,
+.values-list-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 25px;
+}
+
 /* CARDS */
 
 .card,
@@ -187,12 +202,6 @@ body {
     transition: 0.3s;
 }
 
-.contact-card a {
-    color: #22c55e; 
-}
-.contact-card a:hover {
-    color: #16a34a;
-}
 .contact-card img:hover {
     -webkit-transform:scale(1.25); /* Safari and Chrome */
     -moz-transform:scale(1.25); /* Firefox */
@@ -257,7 +266,7 @@ body {
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
 
     .menu-toggle {
         display: block;

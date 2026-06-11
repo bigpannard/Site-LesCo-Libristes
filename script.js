@@ -21,3 +21,59 @@ document.addEventListener('click', function(e) {
         menu.classList.remove('active');
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour filtrer les éléments du glossaire
+    function filterGlossary() {
+        const searchTerm = document.getElementById('glossary-search').value.trim().toLowerCase();
+        const listItems = document.querySelectorAll('.content-grid-large li');
+
+        // Si le champ est vide, réafficher tous les éléments
+        if (searchTerm === '') {
+            listItems.forEach(item => {
+                item.style.display = '';
+            });
+            return;
+        }
+
+        // Filtrer les éléments
+        listItems.forEach(item => {
+            const strongElement = item.querySelector('strong');
+            if (strongElement) {
+                const text = strongElement.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = ''; // Afficher si correspondance
+                } else {
+                    item.style.display = 'none'; // Cacher sinon
+                }
+            } else {
+                item.style.display = 'none'; // Cacher si pas de <strong>
+            }
+        });
+    }
+
+    // Ajouter l'écouteur d'événement sur le champ de recherche
+    const searchInput = document.getElementById('glossary-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', filterGlossary);
+    }
+
+    // Style pour le champ de recherche (optionnel, peut aussi être dans style.css)
+    const style = document.createElement('style');
+    style.textContent = `
+        .search-container {
+            margin: 1rem 0;
+            width: 100%;
+        }
+        #glossary-search {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    `;
+    document.head.appendChild(style);
+});

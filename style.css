@@ -187,6 +187,13 @@ body {
     transition: 0.3s;
 }
 
+.contact-card a {
+    color: #22c55e; 
+}
+.contact-card a:hover {
+    color: #16a34a;
+}
+
 .card:hover,
 .contact-card:hover,
 .value-item:hover,

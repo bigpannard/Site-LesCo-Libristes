@@ -193,6 +193,13 @@ body {
 .contact-card a:hover {
     color: #16a34a;
 }
+.contact-card img:hover {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+}
 
 .card:hover,
 .contact-card:hover,

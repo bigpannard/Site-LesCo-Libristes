@@ -14,27 +14,8 @@
 
     <!-- HEADER -->
     <header class="hero">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="img/logo.png" width="64" height="64" alt="Logo Les Co-Libristes">
-                Les Co-Libristes
-            </div>
 
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
-                ☰
-            </button>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html#about">À propos</a></li>
-                <li><a href="index.html#manifest">Manifeste</a></li>
-                <li><a href="index.html#activities">Activités</a></li>
-                <li><a href="index.html#values">Valeurs</a></li>
-                <li><a href="index.html#events">Événements</a></li>
-                <li><a href="index.html#join">Rejoindre</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="glossaire.html">Glossaire</a></li>
-            </ul>
-        </nav>
+        <div include-html="menu.html"></div>
 
         <div class="hero-content">
             <h1>Les Co-Libristes</h1>
@@ -53,7 +34,7 @@
         </div>
     </header>
 
-    <!-- ABOUT -->
+    <!-- ABOUT 
     <section id="about" class="section alt">
         <div class="container">
             <h2>À propos</h2>
@@ -81,7 +62,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
      <!-- Manifest -->
     <section id="manifest" class="section">
@@ -150,7 +131,7 @@
         </div>
     </section>
 
-    <!-- VALUES -->
+    <!-- VALUES 
     <section id="values" class="section">
         <div class="container">
             <h2>Nos valeurs</h2>
@@ -177,21 +158,24 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- EVENTS -->
-    <section id="events" class="section alt">
+    <section id="events" class="section">
         <div class="container">
             <h2>Événements à venir</h2>
-            <p>
-                Découvrez les événements à venir, les ateliers et les rencontres organisés par Les Co-Libristes ASBL. Restez informé de nos activités et participez à la promotion du logiciel libre dans la région de Wallonie Picarde.
-            </p>
-            <iframe height="600" width="100%" src="https://framagenda.org/apps/calendar/embed/ad5mYjd8WoepfHn9"></iframe>
+            <div class="join-box">
+                <p>
+                    Découvrez les événements à venir, les ateliers et les rencontres organisés par Les Co-Libristes ASBL. Restez informé de nos activités et participez à la promotion du logiciel libre dans la région de Wallonie Picarde.
+                </p>
+                <iframe height="600" width="100%" src="https://framagenda.org/apps/calendar/embed/ad5mYjd8WoepfHn9"></iframe>
+            </div>
+            
         </div>
     </section>
 
     <!-- JOIN -->
-    <section id="join" class="section">
+    <section id="join" class="section alt">
         <div class="container">
             <h2>Rejoindre Les Co-Libristes</h2>
 
@@ -216,7 +200,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section alt">
+    <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
 
@@ -244,14 +228,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>
-                © 2026 Les Co-Libristes ASBL — Tous droits réservés
-            </p>
-        </div>
-    </footer>
-
+    <div include-html="footer.html"></div>
+    <script>includeHTML();</script>
 </body>
 </html>

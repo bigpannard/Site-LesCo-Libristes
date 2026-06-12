@@ -1,15 +1,52 @@
-document.addEventListener('DOMContentLoaded', function() {
+function menuToggle() { 
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.nav-links');
+    
+    if(menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            menu.setAttribute('aria-expanded', !isExpanded);
 
-    menuToggle.addEventListener('click', function() {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        menu.setAttribute('aria-expanded', !isExpanded);
+            // Toggle la classe pour l'animation
+            menu.classList.toggle('active');
+            });
+    }
+}
 
-        // Toggle la classe pour l'animation
-        menu.classList.toggle('active');
-        });
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  } 
+  menuToggle();
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    menuToggle();
 });
 
 document.addEventListener('click', function(e) {
@@ -76,22 +113,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchInput) {
         searchInput.addEventListener('input', filterGlossary);
     }
-
-    // Style pour le champ de recherche (optionnel, peut aussi être dans style.css)
-    const style = document.createElement('style');
-    style.textContent = `
-        .search-container {
-            margin: 1rem 0;
-            width: 100%;
-        }
-        #glossary-search {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-    `;
-    document.head.appendChild(style);
 });

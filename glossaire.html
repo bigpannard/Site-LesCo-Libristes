@@ -14,27 +14,7 @@
 
     <!-- HEADER -->
     <header class="hero3">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="img/logo.png" width="64" height="64" alt="Logo Les Co-Libristes">
-                Les Co-Libristes
-            </div>
-
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
-                ☰
-            </button>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html#about">À propos</a></li>
-                <li><a href="index.html#manifest">Manifeste</a></li>
-                <li><a href="index.html#activities">Activités</a></li>
-                <li><a href="index.html#values">Valeurs</a></li>
-                <li><a href="index.html#events">Événements</a></li>
-                <li><a href="index.html#join">Rejoindre</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="glossaire.html">Glossaire</a></li>
-            </ul>
-        </nav>
+        <div include-html="menu.html"></div>
     </header>
 
     <!-- Glossaire -->
@@ -42,7 +22,7 @@
         <div class="container">
             <h2>Glossaire</h2>
               <div class="search-container">
-                <input type="text" id="glossary-search" placeholder="Rechercher un terme..." aria-label="Rechercher dans le glossaire">
+                <input type="text" id="glossary-search" placeholder="Rechercher un terme..." aria-label="Rechercher dans le glossaire" autofocus>
             </div>
 
             <div class="content-grid-large">
@@ -243,14 +223,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>
-                © 2026 Les Co-Libristes ASBL — Tous droits réservés
-            </p>
-        </div>
-    </footer>
-
+    <div include-html="footer.html"></div>
+    <script>includeHTML();</script>
 </body>
 </html>

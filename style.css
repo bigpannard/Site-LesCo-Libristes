@@ -222,6 +222,12 @@ a:hover {
      transform:scale(1.25);
 }
 
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .card:hover,
 .contact-card:hover,
 .value-item:hover,

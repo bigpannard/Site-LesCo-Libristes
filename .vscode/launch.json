@@ -8,7 +8,7 @@
             "type": "editor-browser",
             "request": "launch",
             "name": "Open index.html",
-            "url": "file:///home/manu/Github/Colibristes/Site-LesCo-Libristes/index.html",
+            "url": "file:///home/manu/pCloudDrive/Projet Libre à Toi/Site/Site-LesCo-Libristes/index.html",
         }
     ]
 }
